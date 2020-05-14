@@ -28,7 +28,7 @@ venv_prompt() {
 function prompt_command() {
 	retval=$?
 	local ret_status="$([ $retval -eq 0 ] && echo -e "$STATUS_THEME_PROMPT_OK" || echo -e "$STATUS_THEME_PROMPT_BAD")"
-	PS1="\n${PURITY_THEME_PROMPT_COLOR}\w $(scm_prompt_info)\n${ret_status}$(venv_prompt)"
+	PS1="\n${PURITY_THEME_PROMPT_COLOR}\w $(scm_prompt_info) ${ret_status}$(venv_prompt)"
 }
 
 safe_append_prompt_command prompt_command
